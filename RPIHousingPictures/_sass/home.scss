@@ -1,0 +1,16 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.dorm-link {
+  margin-left: $spacer * (-0.5);
+  padding-left: $spacer * 0.5;
+  padding-right: $spacer * 0.5;
+  display: block;
+  text-decoration: none;
+  color: $gray-800;
+}
+
+.dorm-link:hover {
+  background-color: $table-active-bg;
+  text-decoration: underline;
+  color: $black;
+}
