@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "bootstrap": "^5.0.2"
+  },
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "scripts": {
+    "css-stylelint": "stylelint \"**/*.scss\"",
+    "css-stylelint:fix": "stylelint \"**/*.scss\" --fix"
   }
 }
