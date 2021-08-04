@@ -7,7 +7,18 @@ body {
 }
 
 footer {
+  display: flex;
   height: 8em;
   background-color: $gray-500;
+}
+
+.footer-content {
+  margin: auto;
   text-align: center;
+  width: 80%;
+}
+
+.footer-separator {
+  margin-left: 1em;
+  margin-right: 1em;
 }
