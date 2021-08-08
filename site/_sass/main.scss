@@ -5,8 +5,23 @@ body {
 }
 
 footer {
-  height: 10em;
+  display: flex;
+  height: 8em;
   background-color: $gray-500;
-  line-height: 10em;
+}
+
+.footer-content {
+  margin: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+
+  a {
+    color: $black;
+  }
+}
+
+.footer-separator {
+  margin-left: 1em;
+  margin-right: 1em;
 }
