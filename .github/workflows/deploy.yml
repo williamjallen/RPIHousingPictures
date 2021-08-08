@@ -26,9 +26,7 @@ jobs:
         bundler-cache: true
 
     - name: Install Dependencies
-      run: |
-        npm install
-        bundle install
+      run: npm install
 
     - name: Build Site
       run: bundle exec jekyll build; ls ./_site
