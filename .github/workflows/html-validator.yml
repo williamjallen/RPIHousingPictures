@@ -47,5 +47,5 @@ jobs:
 
     - name: Run HTML Validator
       run: |
-      ls ~/site/_site
-      java -jar /usr/bin/vnu.jar --format json ~/site/_site
+        ls ~/site/_site
+        java -jar /usr/bin/vnu.jar --format json ~/site/_site
