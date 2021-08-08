@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "bootstrap": "^5.0.2"
+  },
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0"
+  },
+  "scripts": {
+    "css-stylelint": "stylelint \"**/*.scss\"",
+    "css-stylelint:fix": "stylelint \"**/*.scss\" --fix"
+  }
+}
