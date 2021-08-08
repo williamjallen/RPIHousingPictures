@@ -1,0 +1,28 @@
+name: HTML Validator
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: site
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get install w3c-markup-validator
+
+    - name: Build Site
+      run: bundle exec jekyll build
+
+    - name: Run Link Checker
+      run: htmlproofer --assume-extension ./_site
