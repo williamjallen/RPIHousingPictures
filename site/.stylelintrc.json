@@ -1,9 +1,0 @@
-{
-  "extends": "stylelint-config-sass-guidelines",
-  "ignoreFiles": [
-    "assets/css/index.scss"
-  ],
-  "rules": {
-    "order/properties-alphabetical-order": null
-  }
-}
