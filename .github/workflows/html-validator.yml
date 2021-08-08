@@ -3,7 +3,7 @@ name: HTML Validator
 on: [push, pull_request]
 
 jobs:
-    css-lint:
+    HTML Validator:
         runs-on: ubuntu-20.04
         defaults:
             run:
