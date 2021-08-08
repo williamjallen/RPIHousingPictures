@@ -20,10 +20,10 @@ jobs:
     - name: Cache Node Modules
       uses: actions/cache@v2
       with:
-          path: ~/.npm
-          key: ${{ runner.os }}-cache-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-               ${{ runner.os }}-cache-node-modules-
+        path: ~/.npm
+        key: ${{ runner.os }}-cache-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-cache-node-modules-
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
