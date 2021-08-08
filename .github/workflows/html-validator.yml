@@ -38,12 +38,12 @@ jobs:
 
     - name: Install HTML Validator
       run: |
-        wget https://github.com/validator/validator/releases/download/20.3.16/vnu.jar_20.3.16.zip
-        unzip vnu.jar_20.3.16.zip
+        wget https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
+        unzip vnu.jar_20.6.30.zip
         sudo mv dist/vnu.jar /usr/bin/
 
     - name: Build Site
       run: bundle exec jekyll build
 
     - name: Run HTML Validator
-      run: java -jar /usr/bin/vnu.jar --format json _site
+      run: java -jar /usr/bin/vnu.jar --format json --skip-non-html _site
