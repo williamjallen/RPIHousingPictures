@@ -35,7 +35,8 @@ jobs:
       run: |
         npm install
         bundle install
-        sudo apt-get install w3c-markup-validator
+
+    - name: Install HTML Validator
 
     - name: Build Site
       run: bundle exec jekyll build
