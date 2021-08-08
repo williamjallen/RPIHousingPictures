@@ -36,16 +36,16 @@ jobs:
         npm install
         bundle install
 
-    - name: Install HTML Validator
-      run: |
-        wget https://github.com/validator/validator/releases/download/20.3.16/vnu.jar_20.3.16.zip
-        unzip vnu.jar_20.3.16.zip
-        sudo mv dist/vnu.jar /usr/bin/
+    # - name: Install HTML Validator
+    #   run: |
+    #     wget https://github.com/validator/validator/releases/download/20.3.16/vnu.jar_20.3.16.zip
+    #     unzip vnu.jar_20.3.16.zip
+    #     sudo mv dist/vnu.jar /usr/bin/
 
     - name: Build Site
       run: bundle exec jekyll build
 
     - name: Run HTML Validator
       run: |
-        ls ~/site/_site
+        ls .
         java -jar /usr/bin/vnu.jar --format json ~/site/_site
