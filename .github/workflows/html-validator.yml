@@ -46,4 +46,6 @@ jobs:
       run: bundle exec jekyll build
 
     - name: Run HTML Validator
-      run:  java -jar /usr/bin/vnu.jar --format json ~/site/_site
+      run: |
+      ls ~/site/_site
+      java -jar /usr/bin/vnu.jar --format json ~/site/_site
