@@ -46,4 +46,4 @@ jobs:
       run: bundle exec jekyll build
 
     - name: Run Link Checker
-      run:  java /usr/bin/vnu.jar --format json ~/site/_site
+      run:  java -jar /usr/bin/vnu.jar --format json ~/site/_site
