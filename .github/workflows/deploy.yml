@@ -1,0 +1,37 @@
+name: Deploy
+
+on: push
+
+jobs:
+  html-validator:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: site
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - name: Cache Node Modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-cache-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-cache-node-modules-
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.1
+        bundler-cache: true
+
+    - name: Install Dependencies
+      run: |
+        npm install
+        bundle install
+
+    - name: Build Site
+      run: bundle exec jekyll build
+
+    - name: Deploy
+      run: ls; deploy.sh
