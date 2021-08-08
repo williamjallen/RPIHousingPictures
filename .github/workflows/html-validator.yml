@@ -45,5 +45,5 @@ jobs:
     - name: Build Site
       run: bundle exec jekyll build
 
-    - name: Run Link Checker
+    - name: Run HTML Validator
       run:  java -jar /usr/bin/vnu.jar --format json ~/site/_site
