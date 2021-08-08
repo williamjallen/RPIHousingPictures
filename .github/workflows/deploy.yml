@@ -3,7 +3,7 @@ name: Deploy
 on: push
 
 jobs:
-  html-validator:
+  deploy:
     runs-on: ubuntu-20.04
     defaults:
       run:
@@ -34,4 +34,4 @@ jobs:
       run: bundle exec jekyll build
 
     - name: Deploy
-      run: ls; deploy.sh
+      run: bash deploy.sh
