@@ -13,41 +13,63 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md mb-3 p-md-4 navbar-light bg-light">
+      <nav class="navbar navbar-expand-md mb-3 p-md-3 navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="">Logo Here</a>
+          <a class="navbar-brand" href="/">Logo Here</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Link</a>
+            <form style="display: inline-block;">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="freshman-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Freshman
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="freshman-dropdown">
+                  {% for freshman_dorm in site.data.dorms_by_year["freshman"] %}
+                    <li><a class="dropdown-item {% if page.dorm_id == freshman_dorm.dorm_id %} active {% endif %}" href="/dorms/{{ freshman_dorm.dorm_id }}">{{ freshman_dorm.dorm_name }}</a></li>
+                  {% endfor %}
+                </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                <a class="nav-link dropdown-toggle" href="#" id="sophomore-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sophomore
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="">Action</a></li>
-                  <li><a class="dropdown-item" href="">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="">Something else here</a></li>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sophomore-dropdown">
+                  {% for sophomore_dorm in site.data.dorms_by_year["sophomore"] %}
+                    <li><a class="dropdown-item {% if page.dorm_id == sophomore_dorm.dorm_id %} active {% endif %}" href="/dorms/{{ sophomore_dorm.dorm_id }}">{{ sophomore_dorm.dorm_name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="junior-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Junior
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="junior-dropdown">
+                  {% for junior_dorm in site.data.dorms_by_year["junior"] %}
+                    <li><a class="dropdown-item {% if page.dorm_id == junior_dorm.dorm_id %} active {% endif %}" href="/dorms/{{ junior_dorm.dorm_id }}">{{ junior_dorm.dorm_name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="senior-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Senior/Co-term
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="senior-dropdown">
+                  {% for senior_dorm in site.data.dorms_by_year["senior"] %}
+                    <li><a class="dropdown-item {% if page.dorm_id == senior_dorm.dorm_id %} active {% endif %}" href="/dorms/{{ senior_dorm.dorm_id }}">{{ senior_dorm.dorm_name }}</a></li>
+                  {% endfor %}
                 </ul>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
     </header>
-    <main style="flex: 1;">
+    <main>
       <div class="container">
         <div class="row">
           <div class="col col-8">
