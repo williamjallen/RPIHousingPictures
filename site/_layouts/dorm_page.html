@@ -52,7 +52,7 @@ layout: default
           <div class="accordion-body">
             {% for file in site.static_files %}
               {% if file.path contains page.dorm_id %}
-                <a href="{{ file.path }}" target="_blank">{{ file.name }}</a><br>
+                <a href="{{ site.baseurl }}{{ file.path }}" target="_blank">{{ file.name }}</a><br>
               {% endif %}
             {% endfor %}
           </div>
