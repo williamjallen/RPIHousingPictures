@@ -2445,6 +2445,8 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 
 footer { display: flex; height: 8em; background-color: #adb5bd; }
 
+main { flex: 1; }
+
 .footer-content { margin: auto; text-align: center; display: flex; align-items: center; }
 
 .footer-content a { color: #000; }
